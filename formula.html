@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AeroMap</title>
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="src/img/logo.png" alt="Logo" />
+    </header>
+    <div class="container">
+      <h2>Como é Feito o Cálculo</h2>
+
+      <h3>1. Cálculo da Distância com a Fórmula de Haversine</h3>
+      <p>
+        Para determinar a distância entre dois pontos na superfície terrestre
+        com base em suas coordenadas geográficas (latitude e longitude),
+        utilizamos a <strong>fórmula de Haversine</strong>. Essa fórmula
+        considera a curvatura da Terra e é ideal para estimar distâncias "em
+        linha reta" em grandes áreas.
+      </p>
+
+      <p><strong>Fórmula:</strong></p>
+      <pre>
+d = 2r * arcsin(√[hav(Δφ) + cos(φ₁) * cos(φ₂) * hav(Δλ)])
+
+Onde:
+- d = distância entre os pontos
+- r = raio da Terra (aproximadamente 6371 km)
+- φ₁, φ₂ = latitudes dos pontos em radianos
+- Δφ = diferença das latitudes
+- Δλ = diferença das longitudes
+- hav(θ) = sin²(θ / 2)
+  </pre
+      >
+
+      <img
+        src="src/img/Haversine .png"
+        alt="Fórmula de Haversine ilustrada"
+        style="max-width: 100%; margin-top: 10px"
+      />
+
+      <p>
+        Essa fórmula retorna a distância entre os dois pontos selecionados no
+        mapa, já ajustada para a forma esférica da Terra.
+      </p>
+
+      <h3>2. Cálculo do Tempo com a Fórmula Física Básica</h3>
+      <p>
+        Com a distância calculada, o próximo passo é aplicar a fórmula básica da
+        física para encontrar o <strong>tempo estimado da viagem</strong>:
+      </p>
+
+      <p><strong>Fórmula:</strong></p>
+      <p>tempo = distância / velocidade</p>
+
+      <p>A velocidade depende do tipo de aeronave selecionada:</p>
+      <ul>
+        <li><strong>Comercial:</strong> ~850 km/h</li>
+        <li><strong>Particular:</strong> ~500 km/h</li>
+      </ul>
+
+      <img
+        src="src/img/image1.png"
+        alt="Cálculo do tempo de viagem"
+        style="max-width: 100%; margin-top: 10px"
+      />
+      <img
+        src="src/img/image2.png"
+        alt="Cálculo do tempo de viagem"
+        style="max-width: 100%; margin-top: 10px"
+      />
+
+      <p>
+        Por exemplo, se a distância calculada for 1700 km e a aeronave for
+        comercial:
+        <br />
+        <code>tempo = 1700 / 850 = 2 horas</code>
+      </p>
+
+      <p>
+        O sistema então converte esse tempo para um formato mais amigável (ex:
+        2h 0min) e exibe ao usuário.
+      </p>
+
+      <button><a href="index.html">Voltar</a></button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="src/js/script.js"></script>
+  </body>
+</html>

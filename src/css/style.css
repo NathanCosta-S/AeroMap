@@ -1,0 +1,110 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(../img/ceu.jpg);
+       background-size: cover;
+       background-position: center;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      width: 300px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    #map {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin: 20px 0;
+      border: 2px solid #a2ff57;
+      border-radius: 10px;
+      box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+       background-image: url(../img/bg.jpg);
+        background-size: cover;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .container h3 {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+   button a {
+    text-decoration: none;
+    color: white;
+   }
+    #resultado {
+      background: #e5f1ff;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      font-size: 16px;
+      margin-top: 10px;
+      color: #1e3a8a;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4em;
+      }
+
+      #map {
+        height: 300px;
+      }
+    }
